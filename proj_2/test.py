@@ -110,5 +110,7 @@ for i in range(len(x1)):
 
 clf = pickle.load(open('model.pickle', 'rb'))
 result = clf.predict(feature_m)
+result = result.transpose()
 print(result)
-np.savetxt('result.txt', result, fmt='%1.4e')
+# np.savetxt('result.txt', result, fmt='%1.4e')
+np.savetxt('result.csv', result, fmt="%d", delimiter=",")
